@@ -7,30 +7,36 @@ A Python-based backtesting framework designed to analyze and simulate S&P 500 in
 ```plaintext
 SPX_class/
 │
-├── data/                               # Folder containing CSV files with data used in the project
-│   ├── spx_prices.csv                  # Daily prices of S&P 500 constituents (renamed from `spx_returns_cleaned`)
-│   ├── permno_industry_map.csv         # Mapping of permno to industry codes
-│   ├── permno_sic_map.csv              # Mapping of permno to SIC codes
-│   ├── spx_presence.csv                # SPX presence matrix (whether a stock is in the index)
-│   ├── ...
+├── data/                               # Data folder containing CSV files
+│   ├── permno_industry_map.csv
+│   ├── permno_sic_map.csv
+│   ├── spx_presence.csv
+│   ├── spx_prices.csv
 │
-├── strategy/                           # Contains different strategy files
-│   ├── __init__.py                     # Makes `strategy` a Python package for easy imports
-│   ├── strategy_base.py                # Base class for strategy objects
-│   ├── momentum_sector_LS.py           # Implements the momentum sector long-short strategy
-│   └── your_new_strategy.py            # Placeholder for your new strategy
+├── data_analysis/                      # Folder for analysis notebooks and scripts
+│   ├── __init__.py
+│   ├── beta_deciles.ipynb              # Notebook for analyzing beta deciles
 │
-├── config.py                           # Configuration settings for the project
-├── data_loader.py                      # Loads and preprocesses data from CSV files
-├── benchmark.py                        # Code to calculate benchmark returns
-├── backtest.py                         # Backtest logic for running the strategy
-├── plotter.py                          # Plotting functions for results
-├── stats_calculator.py                 # Statistics calculations for strategies
-├── main.ipynb                          # Jupyter Notebook that runs the analysis
-├── requirements.txt                    # List of dependencies required for the project
-├── .gitignore                          # Specifies files and directories ignored by Git
+├── src/                                # Main source code folder
+│   ├── __init__.py
+│   ├── config.py                       # Configuration settings for the project
+│   ├── data_loader.py                  # Code for loading data from the `data` folder
+│   ├── benchmark.py                    # Code to calculate benchmark returns
+│   ├── backtest.py                     # Backtest logic for running the strategy
+│   ├── plotter.py                      # Plotting functions for results
+│   ├── stats_calculator.py             # Statistics calculations for strategies
+│   ├── strategy/                       # Folder containing strategy code
+│   │   ├── __init__.py
+│   │   ├── strategy_base.py
+│   │   ├── momentum_sector_LS.py
+│
+├── main.ipynb                          # Main Jupyter Notebook for running the code and backtests
+│
+├── .gitignore                          # Git ignore file for excluding files from GitHub
 ├── README.md                           # Documentation for the project
-└── environment.yml                     # Conda environment configuration (if using Conda)
+├── requirements.txt                    # List of Python dependencies
+└── environment.yml                     # Conda environment file (optional, if using Conda)
+
 ```
 
 
